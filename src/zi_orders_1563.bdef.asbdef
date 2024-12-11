@@ -1,0 +1,32 @@
+managed implementation in class zcl_i_orders_1563 unique;
+strict;
+//strict ( 2 );
+
+define behavior for ZI_ORDERS_1563 alias orders
+persistent table zorders_1563
+lock master
+authorization master ( instance )
+//etag master <field_name>
+early numbering
+{
+  create;
+  update;
+  delete;
+  field ( readonly ) Id;
+  field ( mandatory : create ) Email;
+
+  association _Items { create; }
+}
+
+define behavior for ZI_ITEMS_1563 alias items
+persistent table zitems_1563
+lock dependent by _Orders
+authorization dependent by _Orders
+//etag master <field_name>
+early numbering
+{
+  update;
+  delete;
+  field ( readonly ) Id, OrderId;
+  association _Orders;
+}

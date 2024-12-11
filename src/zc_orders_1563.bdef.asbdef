@@ -1,0 +1,20 @@
+projection;
+strict;
+//strict ( 2 );
+
+define behavior for ZC_ORDERS_1563 alias orders
+{
+  use create;
+  use update;
+  use delete;
+
+  use association _Items { create; }
+}
+
+define behavior for ZC_ITEMS_1563 alias items
+{
+  use update;
+  use delete;
+
+  use association _Orders;
+}
