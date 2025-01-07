@@ -12,6 +12,9 @@ early numbering
   create;
   update;
   delete;
+//  field ( readonly )StatusCriticality;
+//  field ( readonly:update ) Id;
+//field ( mandatory : create  ) Id, Email;
   field ( readonly ) Id;
   field ( mandatory : create ) Email;
 

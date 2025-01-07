@@ -13,7 +13,7 @@ define root view entity ZC_ORDERS_1563
       LastName,
       @EndUserText.label: 'Country'
       Country,
-      @EndUserText.label: 'Created On'
+      @EndUserText.label: 'Create On'
       Createon,
       @EndUserText.label: 'Delivery Date'
       DeliveryDate,
@@ -24,5 +24,5 @@ define root view entity ZC_ORDERS_1563
       @Semantics.imageUrl: true
       ImageUrl,
       /* Associations */
-      _Items : redirected to composition child zc_items_1563
+      _Items : redirected to composition child ZC_ITEMS_1563
 }

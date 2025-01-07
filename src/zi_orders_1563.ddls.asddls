@@ -1,6 +1,6 @@
 @AbapCatalog.viewEnhancementCategory: [#NONE]
 @AccessControl.authorizationCheck: #NOT_REQUIRED
-@EndUserText.label: 'Header'
+@EndUserText.label: 'Orders'
 @Metadata.ignorePropagatedAnnotations: true
 @ObjectModel.usageType:{
     serviceQuality: #X,
@@ -8,7 +8,7 @@
     dataClass: #MIXED
 }
 define root view entity ZI_ORDERS_1563
-  as select from zorders_1563 as Header
+  as select from zorders_1563 as Orders
   composition [0..*] of ZI_ITEMS_1563 as _Items
 {
   key    id           as Id,

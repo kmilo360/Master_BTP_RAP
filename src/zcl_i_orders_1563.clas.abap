@@ -1,15 +1,5 @@
-class ZCL_I_ORDERS_1563 definition
-  public
-  abstract
-  final
-  create public .
-
-public section.
-protected section.
-private section.
+CLASS zcl_i_orders_1563 DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zi_orders_1563.
 ENDCLASS.
 
-
-
-CLASS ZCL_I_ORDERS_1563 IMPLEMENTATION.
+CLASS zcl_i_orders_1563 IMPLEMENTATION.
 ENDCLASS.
