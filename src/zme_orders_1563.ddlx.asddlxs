@@ -4,15 +4,14 @@
     headerInfo: {
     typeName: 'Orders',
     typeNamePlural: 'Sales Orders',
-    typeImageUrl: 'https://cdn3d.iconscout.com/3d/premium/thumb/amazon-3d-icon-download-in-png-blend-fbx-gltf-file-formats--logo-mobile-application-phone-cyber-deals-elements-pack-festival-days-icons-5915024.png',
-    imageUrl: '',
+    typeImageUrl: 'https://thumbs.dreamstime.com/z/%E1%B5%89%CA%B3-plectrum-dorado-con-dise%C3%B1o-de-logo-forma-guitarra-ilustraci%C3%B3n-vectorial-del-d-musical-elegante-177864428.jpg?ct=jpeg',
     title: {
         type: #STANDARD,
         value: 'Id'
     },
     description: {
         type: #STANDARD,
-        value: 'Email'
+        value: 'FirstName'
     }
   }
 }
@@ -21,12 +20,12 @@ annotate entity ZC_ORDERS_1563 with
   @UI.facet: [{ id        : 'Headers',
                 purpose   : #STANDARD,
                 type      : #IDENTIFICATION_REFERENCE,
-                label     : 'Sales Order Header',
+                label     : 'Sales Orders',
                 position  : 10 },
               { id            : 'Items',
                 purpose       : #STANDARD,
                 type          : #LINEITEM_REFERENCE,
-                label         : 'Sales Order Items',
+                label         : 'Items',
                 position      : 20,
                 targetElement : '_Items'}]
   @UI: {
@@ -60,7 +59,7 @@ annotate entity ZC_ORDERS_1563 with
   DeliveryDate;
   @UI: {
        lineItem        : [{ position: 80, importance: #HIGH, criticality: 'OrderStatus' }],
-       identification  : [{ position: 85, label: 'Status [3(Open)|2(Accepted)|1(Canceled)]' }]  }
+       identification  : [{ position: 80, label: 'Status: 3=Open, 2=Accepted, 1=Canceled' }]}
   OrderStatus;
   @UI.hidden: true
   StatusCriticality;

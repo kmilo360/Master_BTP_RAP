@@ -26,11 +26,15 @@ CLASS lhc_orders IMPLEMENTATION.
                       id  = lv_header_id + 1 ) INTO TABLE mapped-orders.
     ENDLOOP.
 
+    LOOP AT mapped-orders ASSIGNING FIELD-SYMBOL(<ls_order>).
+
+        CONDENSE <ls_order>-Id NO-GAPS.
+
+    ENDLOOP.
+
   ENDMETHOD.
 
   METHOD earlynumbering_cba_Items.
-
-*    SELECT MAX( id ) FROM zitems_1563 INTO @DATA(lv_items_id).
 
     LOOP AT entities ASSIGNING FIELD-SYMBOL(<ls_entity>).
 
@@ -38,10 +42,17 @@ CLASS lhc_orders IMPLEMENTATION.
 
       LOOP AT <ls_entity>-%target ASSIGNING FIELD-SYMBOL(<ls_item_create>).
 
-        INSERT VALUE #( %cid            = <ls_item_create>-%cid
+        INSERT VALUE #( %cid    = <ls_item_create>-%cid
                         orderid = <ls_entity>-Id
-                        id  = lv_items_id + 1 ) INTO TABLE mapped-items.
+                        id      = lv_items_id + 1 ) INTO TABLE mapped-items.
+
       ENDLOOP.
+    ENDLOOP.
+
+    LOOP AT mapped-items ASSIGNING FIELD-SYMBOL(<ls_item>).
+
+        CONDENSE <ls_item>-Id NO-GAPS.
+
     ENDLOOP.
 
   ENDMETHOD.
