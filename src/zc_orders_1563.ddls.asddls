@@ -17,8 +17,9 @@ define root view entity ZC_ORDERS_1563
       Createon,
       @EndUserText.label: 'Delivery Date'
       DeliveryDate,
-//      @EndUserText.label: 'Order Status'
+      @EndUserText.label: 'Order Status'
       @ObjectModel.text.element: ['StatusCriticality']
+//      @ObjectModel.text.element: ['OrderStatus']
       OrderStatus,
       StatusCriticality,
       @Semantics.imageUrl: true

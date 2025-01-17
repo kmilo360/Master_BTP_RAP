@@ -12,13 +12,15 @@ early numbering
   create;
   update;
   delete;
-//  field ( readonly )StatusCriticality;
-//  field ( readonly:update ) Id;
-//field ( mandatory : create  ) Id, Email;
+
   field ( readonly ) Id;
+  field ( readonly: update ) Createon;
   field ( mandatory : create ) Email;
 
   association _Items { create; }
+
+  internal action setStatus2;
+  determination setStatus1 on save { field OrderStatus; }
 }
 
 define behavior for ZI_ITEMS_1563 alias items

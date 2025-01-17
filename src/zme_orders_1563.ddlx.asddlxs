@@ -58,8 +58,8 @@ annotate entity ZC_ORDERS_1563 with
       identification  : [{ position: 70, label: 'Delivery Date' }]}
   DeliveryDate;
   @UI: {
-       lineItem        : [{ position: 80, importance: #HIGH, criticality: 'OrderStatus' }],
-       identification  : [{ position: 80, label: 'Status: 3=Open, 2=Accepted, 1=Canceled' }]}
+       lineItem        : [{ position: 80, importance: #HIGH, criticality: 'OrderStatus', value: 'OrderStatus' }], 
+       identification  : [{ position: 80, label: 'Status:Open(3), Accepted(2), Canceled(1)' }]}
   OrderStatus;
   @UI.hidden: true
   StatusCriticality;

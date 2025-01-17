@@ -9,6 +9,9 @@ define behavior for ZC_ORDERS_1563 alias orders
   use delete;
 
   use association _Items { create; }
+
+//  use action setStatus;
+
 }
 
 define behavior for ZC_ITEMS_1563 alias items
